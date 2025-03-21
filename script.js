@@ -4,9 +4,14 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
+
+cube.rotation.y = 0.5;
+cube.rotation.x = 0.5;
+
+
 scene.add( cube );
 
-camera.position.z = 5;
+camera.position.z = 3;
 
 const canvas = document.querySelector('#draw');
 
@@ -16,7 +21,10 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 function animate() {
     window.requestAnimationFrame( animate );
 	renderer.render( scene, camera );
-    cube.rotation.x += 0.01;
+    
+    cube.rotation.z += 0.01;
     cube.rotation.y += 0.01;
+    cube.scale.z += 0.01;
 }
 animate();
+// renderer.render( scene, camera );
