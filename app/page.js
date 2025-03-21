@@ -4,15 +4,15 @@ import ThreeScene from './three';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Three.js with Next.js</title>
         <meta name="description" content="A simple Three.js scene in Next.js" />
       </Head>
       <main>
-        <h1>Welcome to Three.js with Next.js!</h1>
-        <ThreeScene />
+        
+        <canvas id='draw' className='h-full'><ThreeScene /></canvas>
       </main>
-    </div>
+    </>
   );
 }
