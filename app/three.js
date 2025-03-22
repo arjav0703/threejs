@@ -30,7 +30,7 @@ const ThreeScene = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor =0.001;
+    controls.dampingFactor =0.01;
 
     function animate() {
       window.requestAnimationFrame(animate);
@@ -45,13 +45,11 @@ const ThreeScene = () => {
     }
     animate();
 
-    // Clean up on component unmount
     return () => {
       document.body.removeChild(canvas);
     };
   }, []);
 
-  return null; // This component does not render any JSX
 };
 
 export default ThreeScene;
